@@ -109,6 +109,9 @@ class IrcBot extends Adapter
     # Deprecated in 3.0.0
     return @userForId id
 
+  getUsers: () ->
+    return @bot.send 'USERS'
+
   createUser: (channel, from) ->
     user = @getUserFromId from
     user.name = from
