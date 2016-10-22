@@ -172,6 +172,7 @@ class IrcBot extends Adapter
       userName: process.env.HUBOT_IRC_USERNAME
 
     client_options =
+      nick: options.nick
       userName: options.userName
       realName: options.realName
       password: options.password
@@ -183,6 +184,7 @@ class IrcBot extends Adapter
       certExpired: options.certExpired
       floodProtection: @unfloodProtection(options.unflood),
       floodProtectionDelay: @unfloodProtectionDelay(options.unflood),
+      sasl: true
 
     client_options['channels'] = options.rooms unless options.nickpass
 
